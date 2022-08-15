@@ -7,4 +7,4 @@ export default function authedUser (state = null, action) {
     default :
       return state
   }
-} 
+}
