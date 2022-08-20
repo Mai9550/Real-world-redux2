@@ -1,10 +1,12 @@
 import React,{Component} from 'react'
 import {connect} from 'react-redux'
+import Dashboard from './Dashboard'
 class Dashboard extends Component {
     render() {
+        console.log(this.props)
         return(
             <div>
-                Dashboard
+                <Dashboard/>
             </div>
         )
     }
