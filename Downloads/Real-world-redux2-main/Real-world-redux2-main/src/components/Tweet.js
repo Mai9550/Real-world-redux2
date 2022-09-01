@@ -5,8 +5,17 @@ import {formatTweet} from '../utils/helpers';
 class Tweet extends Component {
   render(){
     const {tweet} = this.props;
+    const {
+      name, avatar, timestamp, text, hasLiked, likes, replies, parent
+    } = tweet
+
     return(
-    <div className="tweet"></div>
+    <div className="tweet">
+      <img 
+       src={avatar}
+       
+       className='avatar'/>
+    </div>
     
     
   
