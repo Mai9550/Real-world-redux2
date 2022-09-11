@@ -1,0 +1,46 @@
+@import "../../utils/stylesheet/mixins.scss";
+
+.main {
+  width: 82%;
+  margin-left: 17%;
+  padding-top: 7.2rem;
+  .sendInvite {
+    .invite {
+      border: none;
+      background-color: #2697fe;
+      @include font-ralewy(20, #fff, 500);
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-right: 1.6rem;
+    }
+    @include flex(row, flex-start, center);
+  }
+  .details {
+    max-width: 65rem;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    padding-left: 1.4rem;
+    border-radius: 20px;
+    background-color: #fff;
+    .titles {
+      margin-bottom: 1.4rem;
+      .titlesList {
+        @include flex(row, flex-start, center);
+        @include font-ralewy(18, #acacac, 400);
+        .name {
+          margin-right: 16rem;
+        }
+        .phone {
+          margin-right: 11rem;
+        }
+        .email {
+          margin-right: 12.4rem;
+        }
+        .status {
+          margin-left: 2rem;
+        }
+      }
+    }
+  }
+}

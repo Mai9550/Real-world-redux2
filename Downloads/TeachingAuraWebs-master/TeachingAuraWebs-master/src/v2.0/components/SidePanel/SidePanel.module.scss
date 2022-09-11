@@ -1,0 +1,107 @@
+@import "../../utils/stylesheet/mixins.scss";
+
+.sidePanel {
+  width: 12rem;
+  position: fixed;
+  padding-bottom: 12px;
+  padding-top: 2.2rem;
+  background-color: #fff;
+  height: 100vh;
+  min-height: 100%;
+  z-index: 10;
+  @include flex(column, flex-start, center);
+  .iconSection {
+    height: 1rem;
+    display: flex;
+    gap: 4px;
+    .iconImg {
+      width: 16px;
+      height: 16px;
+      object-fit: cover;
+    }
+    .iconTitle {
+      @include font-ralewy(16, #282828, 400);
+    }
+  }
+  .institute {
+    margin-top: 3rem;
+    @include flex(column, flex-start, center);
+    .instituteImg {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 6px;
+    }
+    .instituteName {
+      @include font-ralewy(16, #282828, 400);
+      margin-bottom: 0;
+    }
+    .instituteSkill {
+      margin-top: 0;
+      @include font-ralewy(12, rgba(0, 0, 0, 0.4), 400);
+    }
+  }
+  .navigation {
+    margin-top: 16px;
+    width: 100%;
+    .navItem {
+      padding-left: 32px;
+      border-left: 6px solid #fff;
+      margin-bottom: 0.25rem;
+      .navLink {
+        @include font-ralewy(14, #a3a3a3, 500);
+        @include flex(row, flex-start, center);
+        gap: 12px;
+        text-decoration: none;
+        .navIcon {
+          width: 20px;
+          height: 20px;
+        }
+        .navText {
+          margin-top: 6px;
+          @include font-ralewy(14, #a3a3a3, 500);
+        }
+        .activeText {
+          margin-top: 6px;
+          @include font-ralewy(14, #2697fe, 500);
+        }
+      }
+    }
+    .navItem:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .navItem.border {
+    border-left: 6px solid #2697fe;
+  }
+
+  .uploadCourse {
+    margin-top: 80px;
+    width: 164px;
+    height: 170px;
+    background: linear-gradient(230.04deg, #2697fe 2.11%, #ff7cbb 102.63%);
+    box-shadow: 0px 4px 33px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    padding: 4.5rem 0.5rem 4rem 1rem;
+    @include font-ralewy(16, #fff, 400);
+    @include flex(column, center, flex-end);
+    .uploadMoreVert {
+      cursor: pointer;
+    }
+    .upload {
+      .uploadGroups {
+        width: 36px;
+        height: 36px;
+      }
+      .uploadHeader {
+        @include font-ralewy(14, #fff, 600);
+        margin-bottom: 0;
+      }
+      .uploadDesc {
+        line-height: 1px;
+        @include font-ralewy(12, #fff, 400);
+      }
+    }
+  }
+}

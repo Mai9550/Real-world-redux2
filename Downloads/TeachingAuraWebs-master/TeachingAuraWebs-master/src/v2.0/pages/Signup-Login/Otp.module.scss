@@ -1,0 +1,42 @@
+@import "../../utils/stylesheet/mixins.scss";
+
+.container {
+  background-color: #f3f3f3;
+  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  @include flex(column, flex-start, center);
+  .wrapper {
+    max-width: 500px;
+    @include flex(column);
+    margin-top: 50px;
+    .incorrectOtp {
+      color: red;
+      font-size: 1.5rem;
+    }
+    .submitAccountDetails {
+      margin: 20px;
+      .otpInput {
+        display: flex;
+        justify-content: space-between;
+        .focus {
+          border-bottom: 2px solid #2697fe;
+        }
+      }
+      .resendOtp {
+        text-align: center;
+        font-size: 22px;
+        margin: 38px 0px;
+        letter-spacing: 2px;
+        @include flex(row, space-between, center);
+        .resendOtpLink {
+          border: none;
+          background-color: #f3f3f3;
+          color: #2697fe;
+          font-size: 22px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

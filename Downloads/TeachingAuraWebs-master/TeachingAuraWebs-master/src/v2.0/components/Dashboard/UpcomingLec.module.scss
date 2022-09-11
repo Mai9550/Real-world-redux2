@@ -1,0 +1,73 @@
+@import "../../utils/stylesheet/mixins.scss";
+
+.upcomingLec {
+  height: 80px;
+  @include flex(row);
+  .upcoming {
+    flex: 4;
+    @include font-ralewy(12, rgb(35, 35, 35, 0.8), 400);
+    .upcomingTime {
+      margin-bottom: 2px;
+    }
+    .upcomingDate {
+      @include font-ralewy(12, #999, 400);
+    }
+  }
+  .separation {
+    flex: 2;
+    height: 100%;
+    position: relative;
+    padding-top: 0;
+    margin-right: 8px;
+    @include flex(column, flex-start, center);
+    .separationImg {
+      width: 46px;
+      height: 46px;
+      @include font-ralewy(24, #fff, 500);
+      @include flex(row, center, center);
+      border-radius: 50%;
+      // object-fit: cover;
+      z-index: 90;
+      .separationSvg {
+        width: 23px;
+        height: 23px;
+      }
+    }
+    .purple {
+      background-color: #627be3;
+    }
+    .pink {
+      background-color: #fd7498;
+    }
+    .blue {
+      background-color: #2b9aed;
+    }
+    .yellow {
+      background-color: #f7cb01;
+    }
+  }
+  .separation::after {
+    content: "";
+    height: 80px;
+    width: 2px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #dcefff;
+    transform: translateX(25px);
+    z-index: 0;
+  }
+  .upcomingContent {
+    flex: 8;
+    .upcomingTitle {
+      @include font-ralewy(18, #434343, 500);
+    }
+    .upcomingDuration {
+      .clock {
+        width: 20px;
+        height: 20px;
+      }
+      @include font-ralewy(14, #999, 300);
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@mixin font-ralewy(
+  $size: false,
+  $color: false,
+  $weight: false,
+  $height: false,
+  $style: normal
+) {
+  font-family: Raleway, sans-serif;
+  @if $size {
+    @include font-size($size);
+  }
+  @if $color {
+    color: $color;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $height {
+    @include line-height($height);
+  }
+  @if $style {
+    font-style: $style;
+  }
+}
+
+@mixin font-size($size, $base: 16) {
+  font-size: $size;
+  font-size: calc($size / $base) * 1rem;
+}
+
+@mixin line-height($size, $base: 16) {
+  line-height: $size;
+  line-height: calc($size/$base) * 1rem;
+}
+
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}

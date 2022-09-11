@@ -1,0 +1,80 @@
+.react-resizable {
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(#6084E2,  #0500FF);
+  margin: 0 20px;
+  border-radius: 40px;
+  padding: 15px;
+  color: white;
+}
+.box{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.react-resizable-handle {
+  display: flex;
+  align-self: center;
+  width: 100px;
+  border-radius: 70px;
+  margin-bottom: -30px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  background-color: rgb(56, 55, 55);
+  /* background-image: url('/src/assets/image/SVG/wallet.svg'); */
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  object-fit: contain;
+}
+.react-resizable-handle-sw {
+
+  cursor: sw-resize;
+  transform: rotate(90deg);
+}
+.react-resizable-handle-se {
+  background-color: rgb(67, 67, 67);
+  cursor: pointer;
+}
+.react-resizable-handle-nw {
+  top: 0;
+  left: 0;
+  cursor: nw-resize;
+  transform: rotate(180deg);
+}
+.react-resizable-handle-ne {
+  top: 0;
+  right: 0;
+  cursor: ne-resize;
+  transform: rotate(270deg);
+}
+.react-resizable-handle-w,
+.react-resizable-handle-e {
+  top: 50%;
+  margin-top: -10px;
+  cursor: ew-resize;
+}
+.react-resizable-handle-w {
+  left: 0;
+  transform: rotate(135deg);
+}
+.react-resizable-handle-e {
+  right: 0;
+  transform: rotate(315deg);
+}
+.react-resizable-handle-n,
+.react-resizable-handle-s {
+  left: 50%;
+  margin-left: -10px;
+  cursor: ns-resize;
+}
+.react-resizable-handle-n {
+  top: 0;
+  transform: rotate(225deg);
+}
+.react-resizable-handle-s {
+  bottom: 0;
+  transform: rotate(45deg);
+}

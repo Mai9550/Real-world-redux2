@@ -1,0 +1,21 @@
+@import "../../../../utils/stylesheet/mixins.scss";
+
+.contentWrapper {
+  background: #ffffff;
+  @include font-ralewy(24, #737272, 300);
+  @include flex(column, center, center);
+  width: 250px;
+  div {
+    @include flex(column, center, center);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #f8ebeb;
+    cursor: pointer;
+    width: 250px;
+  }
+  .active {
+    @include font-ralewy(24, #2697fe, 300);
+  }
+  :active {
+    transform: translateY(-1px);
+  }
+}

@@ -1,0 +1,279 @@
+@import "../../../utils/stylesheet/mixins.scss";
+
+.courseWrapper {
+  width: 100%;
+  height: 100%;
+  .course {
+    margin-left: 10%;
+    padding: 8rem 4rem;
+    .btn {
+      float: right;
+      @include font-ralewy(22, #2697fe, 300);
+      border: 1px solid #2697fe;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+    }
+    .subjectsWrapper {
+      background: #ffffff;
+      box-shadow: 0px 4px 40px rgba(211, 211, 211, 0.2);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-top: 4rem;
+      .subject {
+        margin-bottom: 2rem;
+        .subjectHeading {
+          margin-bottom: 2rem;
+        }
+        .row {
+          margin-top: 0.75rem;
+          margin-left: 2rem;
+        }
+        .addTopicBtn {
+          margin-left: 2rem;
+          margin-top: 0.75rem;
+          @include font-ralewy(22, #2697fe, 300);
+        }
+      }
+    }
+  }
+
+  .editTopicWrapper {
+    margin-left: 10%;
+    padding: 7rem 4rem;
+    .container {
+      background: #ffffff;
+      border-radius: 20px;
+      min-height: 70vh;
+      box-shadow: 0px 4px 40px rgba(211, 211, 211, 0.2);
+      padding: 2rem;
+      padding-left: 0rem;
+      .heading {
+        padding-bottom: 0.75rem;
+        width: 100%;
+        border-bottom: 1px solid #f8ebeb;
+        margin-left: 1rem;
+      }
+      .sideBarNcontent {
+        display: grid;
+        grid-template-columns: 0fr 3fr;
+        .contents {
+          min-height: 55vh;
+          border-left: 1px solid #f8ebeb;
+          .addFileConatiner {
+            margin-left: 2rem;
+            .uploard {
+              min-height: 10rem;
+              width: 70%;
+              margin-bottom: 1rem;
+              margin-top: 1rem;
+              img {
+                // height: 10rem;
+                width: 100%;
+                border-radius: 8px;
+                margin-top: 0.75rem;
+              }
+            }
+          }
+          .addTextContainer {
+            margin-left: 2rem;
+            margin-top: 1rem;
+            .text {
+              @include font-ralewy(24, #000000, 300);
+              margin-bottom: 1rem;
+            }
+            .textArea {
+              width: 100%;
+              border: 1px solid #000000;
+              border-radius: 8px;
+              padding: 0.5rem 1.5rem;
+            }
+          }
+          .addQuizContainer {
+            margin-left: 2rem;
+            margin-top: 1rem;
+            .quizHeading {
+              @include font-ralewy(24, #000000, 300);
+            }
+            .questionsContainer {
+              border-bottom: 1px solid #f8ebeb;
+              padding-bottom: 2.5rem;
+              padding-top: 1rem;
+              input {
+                margin-bottom: 0.75rem;
+              }
+              img {
+                margin-bottom: 0.75rem;
+                border-radius: 8px;
+                max-height: 15rem;
+              }
+              .uploard {
+                margin-bottom: 1rem;
+              }
+              .question {
+                border: 1px solid #cccccc;
+                border-radius: 8px;
+                margin-bottom: 1.75rem;
+                .form {
+                  width: 100%;
+                  input {
+                    border-radius: 8px;
+                    width: 100%;
+                    padding: 0.75rem 1rem;
+                    @include font-ralewy(20, #000000, 400);
+                  }
+                }
+              }
+              .options {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                border: 1px solid #cccccc;
+                border-radius: 8px;
+                width: 100%;
+                @include flex(row, flex-start, center);
+                .tick {
+                  height: 100%;
+                  padding: 1.25rem 1.5rem;
+                  background: #d8d8d8;
+                  border-radius: 8px 0px 0px 8px;
+                  cursor: pointer;
+                }
+                .option {
+                  width: 90%;
+                  input {
+                    width: 100%;
+                    padding: 0.75rem 1rem;
+                    align-items: center;
+                    @include font-ralewy(20, #000000, 400);
+                  }
+                }
+              }
+              .addOption {
+                @include font-ralewy(20, #2697fe, 300);
+                cursor: pointer;
+              }
+            }
+            .addQuestions {
+              @include flex(row, center, center);
+              @include font-ralewy(20, #2697fe, 400);
+              width: 100%;
+              border: 1px solid #2697fe;
+              padding: 0.75rem;
+              margin-top: 1.25rem;
+              border-radius: 0.5rem;
+              cursor: pointer;
+            }
+          }
+          .overviewContainer {
+            margin-left: 2rem;
+            margin-top: 2rem;
+            .left {
+              display: grid;
+              grid-template-columns: 1fr 5fr;
+              align-items: start;
+              margin-bottom: 2.5rem;
+              .text {
+                @include flex(row, flex-start, center);
+                gap: 1.5rem;
+                @include font-ralewy(24, #000000, 300);
+              }
+            }
+            .file {
+              @include flex(row, flex-start, center);
+              gap: 0.5rem;
+              @include font-ralewy(20, #2ed903, 250);
+            }
+            .textDiv {
+              @include flex(row, flex-start, flex-start);
+              gap: 1rem;
+              width: 100%;
+              border: 1px solid #bcbcbc;
+              border-radius: 8px;
+              padding-right: 1rem;
+              .textArea {
+                width: 100%;
+                padding: 0.5rem 1.5rem;
+                border-radius: 8px;
+              }
+            }
+            .questions {
+              width: 100%;
+              border: 1px solid #bcbcbc;
+              border-radius: 8px;
+              padding: 1rem 1.5rem;
+              @include flex(row, flex-start, flex-start);
+              gap: 1rem;
+              .quesContainer {
+                .questionCard {
+                  border-bottom: 1px solid #f8ebeb;
+                  padding-bottom: 1rem;
+                  padding-top: 1rem;
+                }
+                img {
+                  border-radius: 8px;
+                }
+                .question {
+                  @include font-ralewy(20, #000000, 350, 24);
+                  margin-top: 1rem;
+                  margin-bottom: 0.75rem;
+                }
+                .optionasWrapper {
+                  @include flex(column, flex-start, flex-start);
+                  gap: 0.25rem;
+                  .options {
+                    @include flex(row, flex-start, center);
+                    gap: 1.5rem;
+                    @include font-ralewy(18, #000000, 300);
+                    .correct {
+                      color: #2ed903;
+                      font-weight: 350;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.replaceImageBtn {
+  @include flex(row, flex-start, center);
+  gap: 1rem;
+  :active {
+    transform: translateY(-1px);
+  }
+  .repBtn {
+    @include font-ralewy(18, #2697fe, 300);
+    padding: 0.25rem 1rem;
+    border: 1px solid #2697fe;
+    border-radius: 6px;
+  }
+  .removeBtn {
+    @include font-ralewy(18, #2697fe, 400);
+  }
+}
+
+.btns {
+  @include flex(row, flex-start, center);
+  gap: 2rem;
+  margin-top: 5rem;
+  :active {
+    transform: translateY(-1px);
+  }
+  .saveBtn {
+    background: #2697fe;
+    padding: 0.5rem 1.5rem;
+    @include font-ralewy(20, #ffffff, 400);
+    border-radius: 8px;
+  }
+  .backBtn {
+    @include font-ralewy(20, #2697fe, 400);
+  }
+}
+
+//delete
+.uploard {
+  min-height: 10rem;
+}

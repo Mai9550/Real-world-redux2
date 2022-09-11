@@ -1,0 +1,31 @@
+@import "../../../utils/stylesheet/mixins.scss";
+
+.navBar {
+  width: 92%;
+  float: right;
+  position: sticky;
+  top: 0px;
+  background: #ffffff;
+  box-shadow: 0px 4px 40px rgba(211, 211, 211, 0.2);
+  z-index: 9;
+  @include flex(row, space-between, center);
+  padding: 1rem 3rem;
+  .title {
+    margin-left: 5%;
+    @include font-ralewy(34, #8e8e8e, 550);
+  }
+  .details {
+    @include flex(row, center, center);
+    cursor: pointer;
+    gap: 1.5rem;
+    .sendInviteButton {
+      @include font-ralewy(22, #ed49a1, 500);
+    }
+    img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+}

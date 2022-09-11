@@ -1,0 +1,139 @@
+@import "../../utils/stylesheet/mixins.scss";
+
+.reviewContainer {
+  box-shadow: 0px 4px 40px rgba(211, 211, 211, 0.2);
+  border-radius: 1rem;
+  width: 600px;
+  padding: 2rem;
+  .ratingContainer {
+    border-bottom: 1px solid #b0b0b0;
+    padding-bottom: 2rem;
+    .heading {
+      @include font-ralewy(20, #2697fe, 500);
+      margin-bottom: 0.75rem;
+    }
+    .starsWrapper {
+      @include flex(row, space-between, center);
+      .stars {
+        @include flex(row, space-between, center);
+        @include font-ralewy(16, #6a6a6a, 300);
+        gap: 1rem;
+        .starsSvg {
+          @include flex(row, space-between, center);
+          gap: 0.15rem;
+          margin-bottom: 2px;
+        }
+      }
+      .writeReview {
+        @include font-ralewy(16, #2697fe, 300);
+        cursor: pointer;
+      }
+    }
+    .ratings {
+      @include font-ralewy(16, #3b3b3b, 300);
+      margin-top: 0.25rem;
+    }
+    .progressBars {
+      margin-top: 1.25rem;
+      @include font-ralewy(16, #2697fe, 300);
+      .progressBar {
+        @include flex(row, space-between, center);
+        margin-top: 1rem;
+        .text {
+          width: 40px;
+        }
+      }
+    }
+    .question {
+      @include font-ralewy(18, #2697fe, 200);
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .imagerContainer {
+      @include flex(row, space-between, center);
+      width: 70%;
+      border: 1px solid #b0b0b0;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+      cursor: pointer;
+      .text {
+        @include font-ralewy(16, #3b3b3b, 800);
+        margin-bottom: 0.5rem;
+      }
+      .images {
+        @include flex(row, flex-start, center);
+        img {
+          width: 45px;
+          height: 45px;
+          border-radius: 4px;
+          margin-right: 0.25rem;
+        }
+      }
+    }
+  }
+
+  // Reviewer
+  .reviewerContainer {
+    margin-top: 1.25rem;
+    .heading {
+      @include font-ralewy(18, #3b3b3b, 600);
+      margin-bottom: 0.75rem;
+    }
+    .reviewer {
+      @include flex(row, flex-start, center);
+      gap: 1rem;
+      @include font-ralewy(20, #000000, 400);
+      .image {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+      }
+    }
+    .stars {
+      @include flex(row, flex-start, center);
+      @include font-ralewy(14, #ed49a1, 200);
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+      .starSvg {
+        @include flex(row, space-between, center);
+        gap: 0.15rem;
+        margin-bottom: 2px;
+      }
+    }
+    .title {
+      @include font-ralewy(16, #6a6a6a, 600);
+      margin-top: 0.5rem;
+    }
+    .date {
+      @include font-ralewy(14, #6a6a6a, 200);
+      margin-bottom: 0.75rem;
+    }
+    .reviewText {
+      @include font-ralewy(16, #6a6a6a, 300);
+    }
+    .peopleText {
+      @include font-ralewy(12, #6a6a6a, 500);
+      margin-top: 1rem;
+    }
+    .buttons {
+      @include flex(row, flex-start, center);
+      margin-top: 0.5rem;
+      gap: 1rem;
+      div {
+        cursor: pointer;
+        :active {
+          transform: translateY(-1px);
+        }
+      }
+      button {
+        padding: 0.5rem;
+        border: 1px solid #c9c9c9;
+        border-radius: 4px;
+        :active {
+          transform: translateY(-1px);
+        }
+      }
+    }
+  }
+}

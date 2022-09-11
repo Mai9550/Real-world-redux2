@@ -1,0 +1,70 @@
+@import "../../utils/stylesheet/mixins.scss";
+
+.container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  @include flex(column, center, space-between);
+  margin-top: 20px;
+  .batchDetails {
+    @include flex(row, space-between, center);
+    .batchText {
+      @include flex(column, center, flex-start);
+      gap: 4px;
+      .batchName {
+        @include font-ralewy(28, #2697fe, 600);
+        margin-bottom: 30px;
+      }
+      .courseName {
+        @include font-ralewy(16, #cacaca, 500);
+
+        .courseNameValue {
+          @include font-ralewy(16, #000, 300);
+          margin-left: 8px;
+        }
+      }
+      .startDate {
+        @include font-ralewy(16, #cacaca, 500);
+        .startDateValue {
+          @include font-ralewy(16, #000, 300);
+          margin-left: 8px;
+        }
+      }
+      .studentsNum {
+        @include font-ralewy(16, #cacaca, 500);
+        .studentsNumValue {
+          @include font-ralewy(16, #000, 300);
+          margin-left: 8px;
+        }
+      }
+      .teachersNum {
+        @include font-ralewy(16, #cacaca, 500);
+        .teachersNumValue {
+          @include font-ralewy(16, #000, 300);
+          margin-left: 8px;
+        }
+      }
+      .deleteBatch {
+        margin-top: 30px;
+        width: 300px;
+        border: 1px solid #2697fe;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: #fff;
+        color: #2697fe;
+        cursor: pointer;
+
+        &:hover {
+          color: white;
+          background-color: #2697fe;
+        }
+      }
+    }
+    .batchImg {
+      width: 400px;
+      height: 250px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+  }
+}

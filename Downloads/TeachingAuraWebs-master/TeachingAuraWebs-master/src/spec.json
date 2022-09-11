@@ -1,0 +1,4861 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "TeachingAuraService",
+    "description": "Backend Application of Teaching Aura",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/api/teacher/{teacherId}": {
+      "get": {
+        "tags": [
+          "teacher-controller"
+        ],
+        "operationId": "getTeacher",
+        "parameters": [
+          {
+            "name": "teacherId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeacherDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "teacher-controller"
+        ],
+        "operationId": "updateTeacher",
+        "parameters": [
+          {
+            "name": "teacherId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherDetails"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeacherDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/student/{studentId}": {
+      "get": {
+        "tags": [
+          "student-controller"
+        ],
+        "operationId": "getById",
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/StudentDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "student-controller"
+        ],
+        "operationId": "updateStudent",
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StudentDetails"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/StudentDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "student-controller"
+        ],
+        "operationId": "deleteStudent",
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getInstituteById",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstituteDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "updateInstitute",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InstituteDetails"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstituteDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/course/{courseId}": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getCourseById",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "courseId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CourseDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "updateCourse",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "courseId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CourseDetails"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CourseDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/batch/{batchId}/test/{testId}": {
+      "get": {
+        "tags": [
+          "test-controller"
+        ],
+        "operationId": "getTestById",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "testId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TestDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "test-controller"
+        ],
+        "operationId": "updateTest",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "testId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TestDetails"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TestDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "test-controller"
+        ],
+        "operationId": "deleteTest",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "testId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TestDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/teacher": {
+      "post": {
+        "tags": [
+          "teacher-controller"
+        ],
+        "operationId": "createTeacher",
+        "parameters": [
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherDetails"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeacherDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/teacher/{teacherId}/institute/{instituteId}/reject": {
+      "post": {
+        "tags": [
+          "teacher-controller"
+        ],
+        "operationId": "rejectInstituteInvite",
+        "parameters": [
+          {
+            "name": "teacherId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeacherInviteDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/teacher/{teacherId}/institute/{instituteId}/accept": {
+      "post": {
+        "tags": [
+          "teacher-controller"
+        ],
+        "operationId": "acceptInstituteInvite",
+        "parameters": [
+          {
+            "name": "teacherId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeacherInviteDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/students": {
+      "get": {
+        "tags": [
+          "student-controller"
+        ],
+        "operationId": "getStudents",
+        "parameters": [
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/StudentDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "student-controller"
+        ],
+        "operationId": "createStudent",
+        "parameters": [
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StudentDetails"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/StudentDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/student/{studentId}/test/{testId}/submission": {
+      "post": {
+        "tags": [
+          "submission-controller"
+        ],
+        "operationId": "addSubmission",
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "testId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SubmissionDetails"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmissionDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/student/{studentId}/institute/{instituteId}/reject": {
+      "post": {
+        "tags": [
+          "student-controller"
+        ],
+        "operationId": "rejectInstituteInvite_1",
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/StudentInviteDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/student/{studentId}/institute/{instituteId}/accept": {
+      "post": {
+        "tags": [
+          "student-controller"
+        ],
+        "operationId": "acceptInstituteInvite_1",
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/StudentInviteDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute": {
+      "post": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "createInstitute",
+        "parameters": [
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InstituteDetails"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstituteDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/v2/course": {
+      "post": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "createCourseV2",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CourseV2Details"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CourseV2Details"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/teacher/{teacherId}": {
+      "post": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "addTeacherToInstitute",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "teacherId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeacherDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "removeTeacherFromInstitute",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "teacherId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeacherDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/student/{studentId}": {
+      "post": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "addStudentToInstitute",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/StudentDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "removeStudentFromInstitute",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/StudentDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/schedule": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getInstituteSchedules",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ScheduleDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "createSchedule",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScheduleDetails"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScheduleDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/notice": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getInstituteAnnouncements",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/NoticeDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "createAnnouncement",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnnouncementDetails"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoticeDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/invite/teacher": {
+      "post": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "sendInviteToTeacherV2",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TeacherDetails"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeacherDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/invite/teacher/{teacherId}": {
+      "post": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "sendInviteToTeacher",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "teacherId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeacherDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/invite/student": {
+      "post": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "sendInviteToStudentV2",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StudentDetails"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/StudentDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/invite/student/{studentId}": {
+      "post": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "sendInviteToStudent",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/StudentDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/course": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getInstituteCourses",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CourseDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "createCourse",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CourseDetails"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CourseDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/course/{courseId}/topic/{topicId}": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getTopicDetails",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "courseId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "topicId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TopicAddDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "addTopicDetails",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "courseId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "topicId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TopicAddDetails"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TopicAddDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/batch": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getInstituteBatches",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BatchDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "createBatch",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BatchDetails"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/BatchDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/batch/{batchId}/test": {
+      "get": {
+        "tags": [
+          "test-controller"
+        ],
+        "operationId": "getAllTests",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TestDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "test-controller"
+        ],
+        "operationId": "createTest",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TestDetails"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TestDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/batch/{batchId}/teachers": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getAllBatchTeachers",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TeacherDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "addListOfTeachersToBatch",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TeacherDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/batch/{batchId}/teacher/{teacherId}": {
+      "post": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "addTeacherToBatch",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "teacherId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeacherDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "removeTeacherFromBatch",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "teacherId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeacherDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/batch/{batchId}/studyMaterial": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getBatchStudyMaterials",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/StudyMaterialDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "createCourseStudyMaterial",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StudyMaterialDetails"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/StudyMaterialDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/batch/{batchId}/students": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getAllBatchStudents",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/StudentDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "addListOfStudentsToBatch",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/StudentDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/batch/{batchId}/student/{studentId}": {
+      "post": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "addStudentToBatch",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/StudentDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "removeStudentFromBatch",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/StudentDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/attachment/upload-url": {
+      "post": {
+        "tags": [
+          "attachment-controller"
+        ],
+        "operationId": "generateSignedUrlToUpload",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AttachmentDetails"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/AttachmentDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/teachers": {
+      "get": {
+        "tags": [
+          "teacher-controller"
+        ],
+        "operationId": "getAllTeachers",
+        "parameters": [
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TeacherDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/teacher/{teacherId}/test": {
+      "get": {
+        "tags": [
+          "teacher-controller"
+        ],
+        "operationId": "getTeacherTests",
+        "parameters": [
+          {
+            "name": "teacherId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TestDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/teacher/{teacherId}/schedule": {
+      "get": {
+        "tags": [
+          "teacher-controller"
+        ],
+        "operationId": "getTeacherSchedules",
+        "parameters": [
+          {
+            "name": "teacherId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ScheduleDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/teacher/{teacherId}/invites": {
+      "get": {
+        "tags": [
+          "teacher-controller"
+        ],
+        "operationId": "getTeacherInvites",
+        "parameters": [
+          {
+            "name": "teacherId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TeacherInviteDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/teacher/{teacherId}/institutes": {
+      "get": {
+        "tags": [
+          "teacher-controller"
+        ],
+        "operationId": "getTeacherInstitutes",
+        "parameters": [
+          {
+            "name": "teacherId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InstituteDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/teacher/{teacherId}/institute/{instituteId}/schedule": {
+      "get": {
+        "tags": [
+          "teacher-controller"
+        ],
+        "operationId": "getTeacherSchedules_1",
+        "parameters": [
+          {
+            "name": "teacherId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ScheduleDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/teacher/{teacherId}/courses": {
+      "get": {
+        "tags": [
+          "teacher-controller"
+        ],
+        "operationId": "getTeacherCourses",
+        "parameters": [
+          {
+            "name": "teacherId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CourseAndBatchDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/teacher/{teacherId}/batches": {
+      "get": {
+        "tags": [
+          "teacher-controller"
+        ],
+        "operationId": "getTeacherBatches",
+        "parameters": [
+          {
+            "name": "teacherId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BatchDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/teacher/{teacherId}/announcements": {
+      "get": {
+        "tags": [
+          "teacher-controller"
+        ],
+        "operationId": "getTeacherAnnouncements",
+        "parameters": [
+          {
+            "name": "teacherId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/NoticeDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/student/{studentId}/test": {
+      "get": {
+        "tags": [
+          "student-controller"
+        ],
+        "operationId": "getStudentTests",
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TestDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/student/{studentId}/test/{testId}/submission/{submissionId}": {
+      "get": {
+        "tags": [
+          "submission-controller"
+        ],
+        "operationId": "getSubmission",
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "testId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "submissionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmissionDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/student/{studentId}/schedule": {
+      "get": {
+        "tags": [
+          "student-controller"
+        ],
+        "operationId": "getStudentScheduleForTimeRange",
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "startTime",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ScheduleDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/student/{studentId}/invites": {
+      "get": {
+        "tags": [
+          "student-controller"
+        ],
+        "operationId": "getStudentInvites",
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/StudentInviteDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/student/{studentId}/institutes": {
+      "get": {
+        "tags": [
+          "student-controller"
+        ],
+        "operationId": "getStudentInstitutes",
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InstituteDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/student/{studentId}/institute/{instituteId}/schedule": {
+      "get": {
+        "tags": [
+          "student-controller"
+        ],
+        "operationId": "getStudentSchedules",
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ScheduleDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/student/{studentId}/courses": {
+      "get": {
+        "tags": [
+          "student-controller"
+        ],
+        "operationId": "getStudentEnrolledCourses",
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CourseAndBatchDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/student/{studentId}/batches": {
+      "get": {
+        "tags": [
+          "student-controller"
+        ],
+        "operationId": "getStudentEnrolledBatches",
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BatchDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/student/{studentId}/announcements": {
+      "get": {
+        "tags": [
+          "student-controller"
+        ],
+        "operationId": "getStudentAnnouncements",
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/NoticeDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/schedule": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getAllSchedules",
+        "parameters": [
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ScheduleDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/schedule/{scheduleId}": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getScheduleById",
+        "parameters": [
+          {
+            "name": "scheduleId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScheduleDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/schedule/meeting/{meetingId}": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getZoomUrlById",
+        "parameters": [
+          {
+            "name": "meetingId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institutes": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getAllInstitutes",
+        "parameters": [
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InstituteDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/v2/course/{courseId}": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getCourseByIdV2",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "courseId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CourseV2Details"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/test/{testId}/submission": {
+      "get": {
+        "tags": [
+          "submission-controller"
+        ],
+        "operationId": "getAllSubmissions",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "testId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SubmissionDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/teachers": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getInstituteTeachers",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TeacherDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/teacher/invites": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getTeacherInvites_1",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TeacherInviteDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/students": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getInstituteStudents",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/StudentDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/student/{studentId}/batch": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getStudentBatches",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CourseAndBatchDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/student/invites": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getStudentInvites_1",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/StudentInviteDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/overview": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getInstituteOverview",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Overview"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/notice/{noticeId}": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getAnnouncementById",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "noticeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoticeDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/course/{courseId}/studyMaterial": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getCourseStudyMaterial",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "courseId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/StudyMaterialDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/batch/{batchId}": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "getBatchById",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "batchId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/BatchDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/attachment/{attachmentId}": {
+      "get": {
+        "tags": [
+          "attachment-controller"
+        ],
+        "operationId": "getAttachmentById",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "attachmentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/AttachmentDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/course/search": {
+      "get": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "searchBYCourseName",
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CourseDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/attachment": {
+      "delete": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "deleteAllInstituteAttachments",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstituteDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/institute/{instituteId}/announcements": {
+      "delete": {
+        "tags": [
+          "institute-controller"
+        ],
+        "operationId": "deleteAllInstituteAnnouncements",
+        "parameters": [
+          {
+            "name": "instituteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$completion",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/ContinuationObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstituteDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "TeacherDetails": {
+        "required": [
+          "contactNumber",
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "contactNumber": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "profilePicURL": {
+            "type": "string"
+          }
+        }
+      },
+      "ContinuationObject": {
+        "type": "object",
+        "properties": {
+          "context": {
+            "$ref": "#/components/schemas/CoroutineContext"
+          }
+        }
+      },
+      "CoroutineContext": {
+        "type": "object"
+      },
+      "StudentDetails": {
+        "required": [
+          "contactNumber",
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "contactNumber": {
+            "type": "string"
+          },
+          "maxEducation": {
+            "type": "string",
+            "enum": [
+              "BELOW_MATRICULATE",
+              "MATRICULATE",
+              "HIGHER_SECONDARY",
+              "UNDERGRADUATE",
+              "POST_GRADUATE",
+              "OTHER"
+            ]
+          },
+          "dateOfBirth": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "profilePicURL": {
+            "type": "string"
+          }
+        }
+      },
+      "InstituteDetails": {
+        "required": [
+          "id",
+          "instituteName"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "instituteName": {
+            "type": "string"
+          },
+          "logo": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "ownerContactNumber": {
+            "type": "string"
+          },
+          "aboutUs": {
+            "type": "string"
+          },
+          "ownerName": {
+            "type": "string"
+          },
+          "ownerEmail": {
+            "type": "string"
+          }
+        }
+      },
+      "CourseDetails": {
+        "required": [
+          "description",
+          "id",
+          "instituteId",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "subjects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SubjectDetails"
+            }
+          },
+          "instituteId": {
+            "type": "string"
+          }
+        }
+      },
+      "SubjectDetails": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "topics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TopicDetails"
+            }
+          }
+        }
+      },
+      "TopicDetails": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "ordering": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "AttachmentDetails": {
+        "required": [
+          "attachmentType",
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "attachmentType": {
+            "type": "string",
+            "enum": [
+              "IMAGE",
+              "PDF",
+              "VIDEO"
+            ]
+          }
+        }
+      },
+      "SubmissionDetails": {
+        "required": [
+          "id",
+          "studentId",
+          "studentName",
+          "submissionTime",
+          "testAttachmentDetails"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "submissionTime": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "studentId": {
+            "type": "string"
+          },
+          "studentName": {
+            "type": "string"
+          },
+          "marks": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "testAttachmentDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TestAttachmentDetails"
+            }
+          }
+        }
+      },
+      "TestAttachmentDetails": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AttachmentDetails"
+            }
+          },
+          "typeOfTestAttachment": {
+            "type": "string",
+            "enum": [
+              "SUBMISSION",
+              "QUESTIONPAPER"
+            ]
+          }
+        }
+      },
+      "TestDetails": {
+        "required": [
+          "batchId",
+          "description",
+          "endTime",
+          "id",
+          "name",
+          "startTime"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "startTime": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "endTime": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "batchId": {
+            "type": "string"
+          },
+          "testAttachmentDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TestAttachmentDetails"
+            }
+          },
+          "submissions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SubmissionDetails"
+            }
+          }
+        }
+      },
+      "TeacherInviteDetails": {
+        "type": "object",
+        "properties": {
+          "institute": {
+            "$ref": "#/components/schemas/InstituteDetails"
+          },
+          "teacher": {
+            "$ref": "#/components/schemas/TeacherDetails"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ACCEPT",
+              "REJECT",
+              "INVITED"
+            ]
+          }
+        }
+      },
+      "StudentInviteDetails": {
+        "type": "object",
+        "properties": {
+          "institute": {
+            "$ref": "#/components/schemas/InstituteDetails"
+          },
+          "student": {
+            "$ref": "#/components/schemas/StudentDetails"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ACCEPT",
+              "REJECT",
+              "INVITED"
+            ]
+          }
+        }
+      },
+      "CourseV2Details": {
+        "required": [
+          "description",
+          "id",
+          "instituteId",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "subjects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SubjectDetails"
+            }
+          },
+          "instituteId": {
+            "type": "string"
+          },
+          "subTitle": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "ONLINE",
+              "OFFLINE"
+            ]
+          },
+          "fee": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "startDate": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "endDate": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "ScheduleDetails": {
+        "required": [
+          "batchId",
+          "courseId",
+          "id",
+          "instituteId",
+          "teacherId",
+          "topicName"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "instituteId": {
+            "type": "string"
+          },
+          "batchId": {
+            "type": "string"
+          },
+          "courseId": {
+            "type": "string"
+          },
+          "teacherId": {
+            "type": "string"
+          },
+          "topicName": {
+            "type": "string"
+          },
+          "startTime": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "endTime": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "joinUrl": {
+            "type": "string"
+          },
+          "meetingId": {
+            "type": "string"
+          }
+        }
+      },
+      "AnnouncementDetails": {
+        "required": [
+          "content",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "attachmentIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "batches": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "instituteId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "BatchDetails": {
+        "required": [
+          "courseId",
+          "courseName",
+          "id",
+          "instituteId",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "startDate": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "courseId": {
+            "type": "string"
+          },
+          "courseName": {
+            "type": "string"
+          },
+          "instituteId": {
+            "type": "string"
+          },
+          "imageUrl": {
+            "type": "string"
+          },
+          "numberOfTeachers": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numberOfStudents": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "active": {
+            "type": "boolean"
+          }
+        }
+      },
+      "NoticeDetails": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "attachmentDetailsList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AttachmentDetails"
+            }
+          },
+          "batches": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BatchDetails"
+            }
+          },
+          "createdAt": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "OptionDetails": {
+        "type": "object",
+        "properties": {
+          "option": {
+            "type": "string"
+          },
+          "optionType": {
+            "type": "string",
+            "enum": [
+              "BASE64",
+              "TEXT"
+            ]
+          },
+          "answer": {
+            "type": "boolean"
+          }
+        }
+      },
+      "QuestionDetails": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OptionDetails"
+            }
+          },
+          "questionFormat": {
+            "type": "string",
+            "enum": [
+              "BASE64",
+              "TEXT"
+            ]
+          },
+          "questionType": {
+            "type": "string",
+            "enum": [
+              "SUBJECTIVE",
+              "OBJECTIVE"
+            ]
+          },
+          "questionMarks": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "TopicAddDetails": {
+        "type": "object",
+        "properties": {
+          "topicQuizDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TopicQuizDetails"
+            }
+          },
+          "topicTextDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TopicTextDetails"
+            }
+          },
+          "topicFileDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TopicFileDetails"
+            }
+          }
+        }
+      },
+      "TopicFileDetails": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "orderIndex": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "TopicQuizDetails": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "orderIndex": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "questions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QuestionDetails"
+            }
+          }
+        }
+      },
+      "TopicTextDetails": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "orderIndex": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "StudyMaterialDetails": {
+        "required": [
+          "id",
+          "subjectId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "attachmentDetailsList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AttachmentDetails"
+            }
+          },
+          "subjectId": {
+            "type": "string"
+          }
+        }
+      },
+      "CourseAndBatchDetails": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "subjects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SubjectDetails"
+            }
+          },
+          "instituteId": {
+            "type": "string"
+          },
+          "batchDetails": {
+            "$ref": "#/components/schemas/BatchDetails"
+          },
+          "courseDescription": {
+            "type": "string"
+          }
+        }
+      },
+      "Overview": {
+        "type": "object",
+        "properties": {
+          "instituteId": {
+            "type": "string"
+          },
+          "numberOfStudents": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "numberOfTeachers": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "numberOfCourses": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "pastLectures": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "liveLectures": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "upcomingLectures": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "totalClassesTaken": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "totalHoursTaken": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import "../../utils/stylesheet/mixins.scss";
+
+.main {
+  position: relative;
+  width: 82%;
+  margin-left: 15.5%;
+  padding-top: 7.2rem;
+  .selectOrInput {
+    @include flex(row, flex-start, center);
+    .selection {
+      width: 18%;
+      .onlineCourse {
+        background-color: #2697fe;
+        @include font-ralewy(20, #fff, 500);
+        border: none;
+        padding: 0.8rem 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0s;
+        &:active {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        &:focus {
+          outline: none;
+        }
+        .option {
+          background-color: #fff;
+          cursor: pointer;
+          @include font-ralewy(18, #2697fe, 400);
+        }
+      }
+    }
+  }
+  .details {
+    margin-top: 2rem;
+    padding: 1rem 1.4rem;
+    border-radius: 20px;
+    background-color: #fff;
+    .titles {
+      margin-bottom: 1.6rem;
+      .titlesList {
+        @include flex(row, flex-start, center);
+        @include font-ralewy(18, #acacac, 400);
+        .name {
+          margin-right: 13rem;
+        }
+        .phone {
+          margin-right: 8rem;
+        }
+        .email {
+          margin-right: 11rem;
+        }
+        .course {
+          margin-right: 10rem;
+        }
+      }
+    }
+  }
+}

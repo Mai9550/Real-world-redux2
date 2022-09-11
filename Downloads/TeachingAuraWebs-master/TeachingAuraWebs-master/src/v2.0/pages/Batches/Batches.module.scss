@@ -1,0 +1,26 @@
+@import "../../utils/stylesheet/mixins.scss";
+
+.rightSide {
+  width: 88%;
+  margin-left: 13%;
+  padding-top: 5rem;
+  .addBatch {
+    margin-top: 30px;
+    margin-left: 40px;
+    /* margin-left: 140px; */
+    background-color: #2697fe;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+  }
+  .mainbar {
+    margin: 40px;
+    /* padding-left: 140px; */
+    display: flex;
+    flex-direction: column;
+  }
+}

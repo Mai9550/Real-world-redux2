@@ -1,0 +1,38 @@
+@import "../../utils/stylesheet/mixins.scss";
+
+.container {
+  position: relative;
+  box-shadow: 0px 4px 40px rgba(211, 211, 211, 0.4);
+  border-radius: 20px;
+  width:auto;
+  padding: 2rem;
+  .heading {
+    @include font-ralewy(26, #2697fe, 500);
+    margin-bottom: 0.75rem;
+  }
+  .subjectsWrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    .subject {
+      padding-left: 1.5rem;
+      .title {
+        @include font-ralewy(18, #000000, 500, 20);
+        margin-bottom: 0.5rem;
+      }
+      .topics {
+        margin-bottom: 1rem;
+        .topic {
+          @include font-ralewy(14, #000000, 300, 20);
+          @include flex(row, flex-start, center);
+          gap: 0.5rem;
+          .dot {
+            width: 7px;
+            height: 6px;
+            background: #000000;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}

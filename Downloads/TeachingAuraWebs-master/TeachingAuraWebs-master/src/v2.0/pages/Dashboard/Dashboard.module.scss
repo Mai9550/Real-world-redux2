@@ -1,0 +1,156 @@
+@import "../../utils/stylesheet/mixins.scss";
+
+.main {
+  // margin: top  right bottom left;
+  // margin: 0% 1% 0% 10%;
+  margin-left: 16%;
+  width: 82%;
+  padding-top: 2rem;
+  @include flex(row, space-between, start);
+  gap: 20px;
+  .mainLeft {
+    flex: 10;
+    .total {
+      @include flex(row, space-between, center);
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+    .attendanceStats {
+      background-color: #fff;
+      box-shadow: 0px 4px 40px rgba(211, 211, 211, 0.2);
+      border-radius: 20px;
+      height: 22rem;
+      padding: 0rem 3rem;
+      padding-top: 1rem;
+      .attendanceHeader {
+        @include font-ralewy(20, #000, 200);
+        margin-bottom: 20px;
+      }
+      .onlyAttendance {
+        @include flex(row);
+        gap: 20px;
+        height: 80%;
+      }
+    }
+    .leftBottom {
+      height: 20rem;
+      margin: 20px 0 6rem 0;
+      @include flex(row);
+      gap: 20px;
+      .liveTop {
+        @include flex(row, space-between, flex-start);
+        .liveText {
+          @include font-ralewy(24, rgb(0, 0, 0, 0.7), 300);
+          .dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #2697fe;
+          }
+          .liveClasses {
+            display: block;
+            @include font-ralewy(16, #999, 200);
+          }
+        }
+        .manageAll {
+          background-color: #ecf6ff;
+          border-radius: 20px;
+          padding: 10px;
+          @include font-ralewy(14, #2697fe, 400);
+        }
+      }
+      .liveBottom {
+        height: 14rem;
+        margin-top: 15px;
+        overflow-y: scroll;
+      }
+      .liveBottom::-webkit-scrollbar {
+        display: none;
+        // width: 0 !important;
+      }
+      .upcomingHeader {
+        @include font-ralewy(24, rgb(0, 0, 0, 0.7), 300);
+      }
+      .upcomingLec {
+        height: 14rem;
+        margin-top: 23px;
+        overflow-y: scroll;
+      }
+      .upcomingLec::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+  .mainRight {
+    flex: 3;
+    .commingSoon {
+      position: relative;
+      .below {
+        border-radius: 20px;
+        background-color: #2697f3;
+        padding: 26px;
+        color: white;
+        padding-left: 34px;
+        .belowText {
+          @include font-ralewy(28, #fff, 600);
+          line-height: 1.2;
+        }
+        .belowPrice {
+          display: block;
+          @include font-ralewy(34, #fff, 600);
+        }
+        .belowButton {
+          border: 2px solid #fff;
+          background-color: transparent;
+          padding: 12px;
+          border-radius: 80px;
+          margin-top: 20px;
+        }
+      }
+      .above {
+        position: absolute;
+        border: 1px solid #e6e6e6;
+        border-radius: 20px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0, 0, 0, 0.6);
+        // opacity: 0.6;
+        .aboveLock {
+          color: #fff;
+          width: 40px;
+          height: 40px;
+          margin-bottom: 10px;
+        }
+        .aboveText {
+          @include font-ralewy(22, #fff, 400);
+        }
+
+        @include flex(column, center, center);
+      }
+    }
+    .pastLectures {
+      background-color: white;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: 0px 4px 40px rgba(211, 211, 211, 0.2);
+      border-radius: 20px;
+      border: 1px solid #e6e6e6;
+      .pastLecHeader {
+        @include font-ralewy(24, rgb(0, 0, 0, 0.7), 400);
+        margin-bottom: 20px;
+      }
+      .pastLecturesList {
+        height: 24rem;
+        @include flex(column, space-between, flex-start);
+        overflow-y: scroll;
+      }
+      .pastLecturesList::-webkit-scrollbar {
+        // display: none;
+        width: 0 !important;
+      }
+    }
+  }
+}

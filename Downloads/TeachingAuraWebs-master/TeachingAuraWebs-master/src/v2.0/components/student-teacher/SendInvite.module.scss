@@ -1,0 +1,94 @@
+@import "../../utils/stylesheet/mixins.scss";
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.sendInvite {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  z-index: 1000;
+  background-color: white;
+  width: 40%;
+  padding-left: 10px;
+  transition: all 5s ease-in;
+
+  width: 30rem;
+  background-color: #fff;
+  padding: 2rem 3rem;
+  border-radius: 14px;
+  @include flex(column, space-between, center);
+  .heading {
+    @include font-ralewy(26, #333333f1, 400);
+    text-align: center;
+  }
+  .inputSection {
+    width: 100%;
+    margin-top: 1.7rem;
+    .teacherNameSection {
+      position: relative;
+      background: #ffffff;
+      border: 1px solid #dddddd;
+      padding: 0.6rem 1.4rem;
+      border-radius: 6px;
+      @include flex(column, space-between, flex-start);
+      margin-bottom: 1rem;
+      .teacherName {
+        border: none;
+        outline: none;
+        width: 100%;
+        height: 50px;
+      }
+      .teacherNameLabel {
+        position: absolute;
+        transform: translate(4px, 15px);
+        transition: all 0.2s ease-in;
+        @include font-ralewy(14, #888888, 400);
+      }
+      .moveUp {
+        transform: translateY(-6px);
+      }
+    }
+    .phoneNumSection {
+      position: relative;
+      background: #ffffff;
+      border: 1px solid #dddddd;
+      padding: 0.6rem 1.4rem;
+      border-radius: 6px;
+      @include flex(column, space-between, flex-start);
+      .phoneNum {
+        border: none;
+        outline: none;
+        width: 100%;
+        height: 50px;
+      }
+      .phoneNumLabel {
+        position: absolute;
+        transform: translate(4px, 15px);
+        transition: all 0.2s ease-in;
+        @include font-ralewy(14, #888888, 400);
+      }
+      .moveUp {
+        transform: translateY(-6px);
+      }
+    }
+  }
+  .sendInviteB {
+    background-color: #2697fe;
+    border: 1px solide #2697fe;
+    border-radius: 8px;
+    @include font-ralewy(26, #fff, 700);
+    padding: 1rem 5rem;
+    margin-top: 1.7rem;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,17 @@
+@import "../../../../utils/stylesheet/mixins.scss";
+
+.editWrapper {
+  @include flex(row, flex-start, center);
+  gap: 0.75rem;
+  @include font-ralewy(32, #000000, 350, 36);
+  input {
+    @include font-ralewy(32, #737272, 300, 36);
+    width: auto;
+  }
+  button {
+    @include font-ralewy(18, #2697fe, 300);
+    border: 1px solid #2697fe;
+    padding: 0.2rem 1rem;
+    border-radius: 8px;
+  }
+}

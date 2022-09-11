@@ -1,0 +1,48 @@
+@import "../../utils/stylesheet/mixins.scss";
+
+.contentWrapper {
+  @include flex(row, center, center);
+  box-shadow: 0px 4px 40px rgba(211, 211, 211, 0.4);
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 20px 30px;
+  gap: 2rem;
+  .image {
+    width: 220px;
+    height: 150px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 40px rgba(211, 211, 211, 0.2);
+  }
+  .details {
+    width: 550px;
+    margin-left: -1rem;
+    .titleText {
+      @include font-ralewy(20, #2697fe, 300);
+    }
+    .aboutText {
+      @include font-ralewy(13, #343434, 200);
+      margin-top: 0.25rem;
+    }
+  }
+  .linkAndPrice {
+    @include flex(row, flex-start, center);
+    gap: 3rem;
+    margin-top: 1rem;
+    div {
+      @include font-ralewy(13, #7c7878, 250);
+      span {
+        a {
+          @include font-ralewy(13, #2697fe, 300);
+        }
+      }
+    }
+  }
+  .buyNow {
+    @include flex(row);
+    cursor: pointer;
+    gap: 0.5rem;
+    float: right;
+    margin-top: 0.75rem;
+    @include font-ralewy(20, #2697fe, 400);
+  }
+}

@@ -1,0 +1,54 @@
+@import "../../utils/stylesheet/mixins.scss";
+
+.container {
+  width: auto;
+  @include flex(column, center, flex-start);
+  padding: 3rem 10rem;
+  background: #2697fe;
+  border-radius: 1rem;
+  margin: 1rem;
+  position: relative;
+  .title {
+    @include font-ralewy(34, #fff, 900, 38);
+    max-width: 740px;
+  }
+  .about {
+    @include font-ralewy(20, #fff, 300, 24);
+    max-width: 450px;
+    margin-top: 1rem;
+  }
+  .starsNrating {
+    @include flex(row, flex-start, center);
+    gap: 2rem;
+    margin-top: 0.5rem;
+    @include font-ralewy(16, #fff, 200);
+    .stars {
+      @include flex(row, center, center);
+      @include font-ralewy(16, #ffd981, 550);
+      gap: 0.5rem;
+      .starsSvg {
+        @include flex(row);
+        gap: 0.25rem;
+        margin-top: -4px;
+      }
+    }
+    span {
+      font-weight: 500;
+    }
+  }
+  .createdBy {
+    @include font-ralewy(16, #fff, 100);
+    margin-top: 0.5rem;
+    span {
+      @include font-ralewy(17, #ffd981, 500, 20, underline);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+.image {
+  position: relative;
+    margin-left: 70%;
+    border-radius: 1rem;
+      margin-top:-21%;
+  }
+}

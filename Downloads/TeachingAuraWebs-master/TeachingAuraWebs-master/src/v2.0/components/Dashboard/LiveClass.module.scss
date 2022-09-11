@@ -1,0 +1,45 @@
+@import "../../utils/stylesheet/mixins.scss";
+
+.liveClass {
+  @include flex(row, flex-start, flex-start);
+  margin-top: 8px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e9e9e9;
+  .liveTime {
+    flex: 1.2;
+    @include font-ralewy(14, rgb(35, 35, 35, 0.8), 200);
+    padding-top: 6px;
+  }
+  .liveDash {
+    height: 60px;
+    width: 2px;
+    background-color: #2697fe;
+    margin: 0 10px 0 0;
+  }
+  .liveContent {
+    flex: 3;
+    @include flex(row, flex-start, flex-start);
+    gap: 5px;
+    .liveImg {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .liveText {
+      .liveTitle {
+        @include font-ralewy(16, #2697fe, 400);
+        margin-bottom: 3px;
+      }
+      .liveDuration {
+        @include flex(row, flex-start, center);
+        gap: 5px;
+        .liveClock {
+          width: 18px;
+          height: 18px;
+        }
+        @include font-ralewy(13, #999, 400);
+      }
+    }
+  }
+}

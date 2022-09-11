@@ -1,0 +1,38 @@
+@import "../../../utils/stylesheet/mixins.scss";
+
+.container {
+  background-color: #f3f3f3;
+  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+  @include flex(column, flex-start, center);
+  .wrapper {
+    max-width: 500px;
+    @include flex(column, center, center);
+    margin-top: 50px;
+    .submitAccountDetails {
+      margin: 20px;
+      .submitText {
+        color: #777;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 12px;
+      }
+      .selectAccount {
+        @include flex(row, space-around, center);
+        margin-bottom: 30px;
+        color: #777;
+        .selectAccountOptionLabel {
+          margin-left: 4px;
+        }
+      }
+      .phoneNumber {
+        width: 100%;
+        padding: 10px 20px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}

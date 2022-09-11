@@ -1,0 +1,34 @@
+.MuiCalendarPicker-root .css-l0iinn {
+  /* display: none; */
+}
+
+.MuiCalendarPicker-root .css-k008qs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* width: 98%; */
+}
+
+.MuiCalendarPicker-root .css-dhopo2 {
+  display: block;
+  position: relative;
+  overflow-x: hidden;
+  min-height: 230px;
+}
+
+ .MuiCalendarPicker-root .css-g2ma9s-MuiButtonBase-root-MuiIconButton-root {
+  display: none;
+}
+
+.css-l0iinn{
+  background-image: url('../../assets/image/SVG/vector.svg') ;
+  color:white;
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  background-size: cover;
+  padding: 16px 50px 10px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

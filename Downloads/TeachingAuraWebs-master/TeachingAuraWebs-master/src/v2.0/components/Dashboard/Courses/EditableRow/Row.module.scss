@@ -1,0 +1,16 @@
+@import "../../../../utils/stylesheet/mixins.scss";
+
+.rowWrapper {
+  @include flex(row, space-between, center);
+  background: #ffffff;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 1rem;
+  .button {
+    @include font-ralewy(18, #2697fe, 300);
+    padding: 0.5rem 1rem;
+    border: 1px solid #2697fe;
+    border-radius: 8px;
+  }
+}

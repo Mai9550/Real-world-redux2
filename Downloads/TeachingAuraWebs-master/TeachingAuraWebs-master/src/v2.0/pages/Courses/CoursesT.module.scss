@@ -1,0 +1,23 @@
+@import "../../utils/stylesheet/mixins.scss";
+
+.mainBar {
+  margin-left: 16%;
+  padding-top: 7rem;
+  width: 84%;
+  .addCourseLink:link,
+  .addCourseLink:visited {
+    @include font-ralewy(20, #fff, 500);
+    background-color: #2697fe;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .addCourseLink:hover {
+    text-decoration: none;
+  }
+
+  .coursesList {
+    margin-top: 30px;
+  }
+}

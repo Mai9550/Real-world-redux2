@@ -1,0 +1,32 @@
+@import "../../utils/stylesheet/mixins.scss";
+
+.containerWraper {
+  background: #eff7ff;
+  border-radius: 10px;
+  padding: 0.75rem;
+  min-width: 280px;
+  cursor: default;
+  .ratingWrapper {
+    @include flex(row, space-between, center);
+    .stars {
+      @include flex(row, center, center);
+      @include font-ralewy(16, #ff008a, 300);
+      gap: 0.5rem;
+      .starsSvg {
+        @include flex(row);
+      }
+    }
+    .rating {
+      margin-right: -6px;
+      cursor: pointer;
+      @include font-ralewy(16, #2697fe, 200);
+    }
+  }
+  .courseType {
+    @include font-ralewy(16, #000000, 300);
+    span {
+      margin-left: 0.75rem;
+      @include font-ralewy(16, #2697fe, 350);
+    }
+  }
+}

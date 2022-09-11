@@ -1,0 +1,13 @@
+@import "../../utils/stylesheet/mixins.scss";
+
+.container {
+  @include flex(column, space-between);
+  gap: 20px;
+  .welcome {
+    font-family: "Raleway";
+    font-size: 56px;
+    font-weight: 500;
+    color: #2697fe;
+    margin: 0;
+  }
+}
