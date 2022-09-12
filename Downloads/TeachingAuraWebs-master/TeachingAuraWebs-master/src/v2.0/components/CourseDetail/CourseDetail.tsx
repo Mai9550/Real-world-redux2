@@ -14,7 +14,8 @@ const CourseDetail = (props) => {
   }
   return (
     <div className={styles.container}>
-       
+       <div className="text">
+
       <div className={styles.title}>{title}</div>
      
       <div className={styles.about}>{about}</div>
@@ -54,7 +55,7 @@ const CourseDetail = (props) => {
         </div>
     
       )}
-      
+      </div>
       <img src={image} alt={title} className={styles.image} />
     
     </div>

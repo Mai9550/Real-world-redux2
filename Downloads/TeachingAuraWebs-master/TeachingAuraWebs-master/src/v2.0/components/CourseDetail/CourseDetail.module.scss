@@ -2,12 +2,14 @@
 
 .container {
   width: auto;
-  @include flex(column, center, flex-start);
+  
   padding: 3rem 10rem;
   background: #2697fe;
   border-radius: 1rem;
   margin: 1rem;
-  position: relative;
+  
+  display: flex;
+  justify-content: space-around;
   .title {
     @include font-ralewy(34, #fff, 900, 38);
     max-width: 740px;
@@ -46,9 +48,24 @@
     }
   }
 .image {
-  position: relative;
-    margin-left: 70%;
-    border-radius: 1rem;
-      margin-top:-21%;
+
+  border-radius: 1rem;
+  right: 20vw;
+  height: auto;
+  max-width: 80%;
+  object-fit: contain;
+  }
+}
+@media screen and (max-width: 640px) {
+  .container {
+    flex-direction: column;
+  }
+  .image {
+    border-radius: 3rem;
+    right: 0;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    margin-top: 1rem;
   }
 }
